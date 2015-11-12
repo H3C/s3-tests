@@ -28,12 +28,12 @@ fi
 virtualenv --no-site-packages --distribute virtualenv
 
 # avoid pip bugs
-./virtualenv/bin/pip install --upgrade pip
+# ./virtualenv/bin/pip install --upgrade pip
 
 # work-around change in pip 1.5
-./virtualenv/bin/pip install setuptools --no-use-wheel --upgrade
+# ./virtualenv/bin/pip install setuptools --no-use-wheel --upgrade
 
-./virtualenv/bin/pip install -r requirements.txt
+./virtualenv/bin/pip install -i http://172.16.100.5/simple -r requirements.txt
 
 # forbid setuptools from using the network because it'll try to use
 # easy_install, and we really wanted pip; next line will fail if pip
